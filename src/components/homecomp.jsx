@@ -90,10 +90,24 @@ const ticketDataList = [
         }
 ];
 
+      const icon = document.querySelector('.fa-moon');
+
+      icon.onclick = function () {
+        document.body.classList.toggle("dark-theme");
+        if (document.body.classList.contains("dark-theme")) {
+          icon.className = "fa-solid fa-sun";
+        }else {
+          icon.className = "fa-solid fa-moon";
+        }
+      }
 
   return (
     <>
-    <div className="sports-section">
+    <main>
+      <div className="sports-section">
+      <div className="light-dark">
+        <i class="fa-solid fa-moon"></i>
+      </div>
       <h2>Sports</h2>
       <div className="players-cards">
         {playerDataList.map((playerData, index) => (
@@ -137,6 +151,7 @@ const ticketDataList = [
             <i class="fa-solid fa-angle-right" ref={nextBtnRef} onClick={handleNextClick}></i>
         </div>
     </div>
+    </main>
     </>
   );
 };
