@@ -5,8 +5,12 @@ button {
 .light-dark {
     cursor: pointer;
     position: absolute;
-    right: 100px;
+    right: 50px;
     font-size: 30px;
+}
+
+.fa-sun {
+    display: none;
 }
 
 :root {
@@ -62,8 +66,6 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* background-color: #000; */
-    /* border: 2px solid #000; */
 }
 
 .player-card {
@@ -266,21 +268,17 @@ main {
     width: 20px;
     height: 20px;
     background-color: var(--fourthary-color);
-    /* background-color: transparent; */
     border-radius: 55px;
     position: absolute;
     top: 70%;
     left: -10px;
     box-shadow: inset rgba(0, 0, 0, 0.1) 1px 0.5px 5px;
-    /* box-shadow: 0px 4px 8px 0px #0000000D; */
 }
 
 .right-cut {
     width: 20px;
     height: 20px;
     background-color: var(--fourthary-color);
-    /* background-color: transparent; */
-    /* border: 1px solid #f7f8ff; */
     border-radius: 55px;
     position: absolute;
     top: 70%;
@@ -346,4 +344,64 @@ main {
     background-color: #000;
     color: #fff;
     border: none;
+}
+
+/* Responsive */
+/* Max-width 1280 */
+@media (min-width: 520px) and (max-width: 1280px) {
+    
+    main {
+        padding: 20px 40px;
+    }
+
+    .players-cards {
+        height: fit-content;
+        flex-wrap: wrap;
+        row-gap: 20px;
+        column-gap: 20px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .collection-spotlight-section {
+        height: fit-content;
+    }
+
+}
+
+@media (min-width: 320px) and (max-width: 520px) {
+    
+    main {
+        padding: 20px 20px;
+    }
+
+    .light-dark {
+        right: 20px;
+    }
+
+    .players-cards {
+        height: fit-content;
+        flex-wrap: wrap;
+        row-gap: 20px;
+        column-gap: 20px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .collection-spotlight-section {
+        height: fit-content;
+    }
+
+    .ticket-card {
+        width: 200px;
+    }
+
+    .ticket-content {
+        padding: 20px 10px;
+    }
+
+    .ticket-content h3 {
+        font-size: 16px;
+    }
+
 }

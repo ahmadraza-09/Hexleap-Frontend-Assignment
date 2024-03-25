@@ -9,6 +9,8 @@ const Homecomp = () => {
   const scrollContainerRef = useRef(null);
   const backBtnRef = useRef(null);
   const nextBtnRef = useRef(null);
+  const sunRef = useRef(null);
+  const moonRef = useRef(null);
 
   const handleNextClick = () => {
     if (scrollContainerRef.current) {
@@ -90,14 +92,19 @@ const ticketDataList = [
         }
 ];
 
-      const icon = document.querySelector('.fa-moon');
+      const moon = document.querySelector('.fa-moon');
+      const sun = document.querySelector('.fa-sun');
 
-      icon.onclick = function () {
+      const darktheme = () => {
         document.body.classList.toggle("dark-theme");
+        const sun = sunRef.current;
+        const moon = moonRef.current; 
         if (document.body.classList.contains("dark-theme")) {
-          icon.className = "fa-solid fa-sun";
+          sun.style.display = "block"; 
+          moon.style.display = "none"; 
         }else {
-          icon.className = "fa-solid fa-moon";
+          sun.style.display = "none";
+          moon.style.display = "block";
         }
       }
 
@@ -105,8 +112,9 @@ const ticketDataList = [
     <>
     <main>
       <div className="sports-section">
-      <div className="light-dark">
-        <i class="fa-solid fa-moon"></i>
+      <div className="light-dark" onClick={darktheme}>
+        <i class="fa-solid fa-moon" ref={moonRef}></i>
+        <i class="fa-solid fa-sun" ref={sunRef}></i>
       </div>
       <h2>Sports</h2>
       <div className="players-cards">
